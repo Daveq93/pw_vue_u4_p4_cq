@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 export const obtenerEstudianteFachada = async (cedula)=>{
 return await obtenerEstudianteAPI(cedula);
@@ -18,13 +18,15 @@ export const eliminarEstudianteFachada=(id)=>{
 
 }
 
-//////////
-const obtenerEstudianteAPI= async()=>{
-  const data = await fetch(`http:///localhost:8080/API/v1.0/Matricula/estudiantes/${cedula}`).then(r=>r.json())
+
+const obtenerEstudianteAPI= async(cedula)=>{
+  const data = await fetch(`http://localhost:8085/API/v1.0/Matricula/estudiantes/${cedula}`).then(r=>r.json())
  console.log(data);
 }
+
 
 const obtenerEstudianteAPIaxios=()=>{
     
 }
+
 
