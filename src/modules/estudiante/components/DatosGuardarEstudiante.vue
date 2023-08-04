@@ -57,7 +57,7 @@ export default {
     };
   },
   methods: {
-    async guardarEstudiante() {
+     guardarEstudiante() {
       const data = {
         cedula: this.cedula,
         nombre: this.nombre,
@@ -66,7 +66,8 @@ export default {
         provincia: this.provincia,
       };
 
-      await ingresarEstudianteFachada(data);
+       ingresarEstudianteFachada(data);
+
       this.cedula="",
       this.nombre="",
       this.apellido="",

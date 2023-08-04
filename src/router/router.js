@@ -6,7 +6,7 @@ const routes =[
         component:()=> import('../modules/estudiante/pages/Bienvenida')
     },
     {
-        path:"/busca",
+        path:"/busca/:ced",
         component:()=> import('../modules/estudiante/pages/ConsultaEstudiante')
     },
     {

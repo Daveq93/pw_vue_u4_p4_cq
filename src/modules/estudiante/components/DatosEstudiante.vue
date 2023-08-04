@@ -35,7 +35,7 @@
           </td>
         </tr>
         <tr>
-          <td><label for="provincia">Apellido:</label></td>
+          <td><label for="provincia">Provincia:</label></td>
           <td><input id="provincia" v-model="provincia" type="text" disabled="false" /></td>
         </tr>
       </tbody>
@@ -50,7 +50,7 @@ import { obtenerEstudianteFachada } from "../helpers/EstudianteCliente";
 export default {
   data() {
     return {
-      cedula: null,
+      cedula: this.$route.params.ced,
       nombre: null,
       apellido: null,
       fechaNacimiento:null,
@@ -67,6 +67,20 @@ export default {
       this.provincia=data.provincia;
     },
   },
+  mounted(){
+      const{ced}= this.$route.params;
+      
+      console.log("Imprimiendo ced component: "+ced);
+     // this.cedula=ced;
+     this.consultarEstudiante();
+     ////////////////
+      console.log(this.$route)
+     const prov= this.$route.query.provincia;
+     const variable = this.$route.query.variable;
+     console.log("provincia: "+prov);
+     console.log("variable: "+variable);
+      
+  }
 };
 </script>
 

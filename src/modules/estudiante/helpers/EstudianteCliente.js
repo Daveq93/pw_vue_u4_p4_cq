@@ -36,6 +36,7 @@ const obtenerEstudianteAPIaxios= async(cedula)=>{
 
 const ingresarEstudiante = (bodyEstudiante)=>{
   axios.post(`http://localhost:8085/API/v1.0/Matricula/estudiantes`,bodyEstudiante).then(r=>r.data);
+  console.log("Estudiante ingresado");
 }
 
 
@@ -47,6 +48,7 @@ const actualizarEstudiante=(bodyEstudiante,id)=>{
 
 const eliminarEstudiante= async(id)=>{
  const data = await axios.delete(`http://localhost:8085/API/v1.0/Matricula/estudiantes/${id}`).then(r=>r.data);
+ 
  console.log(data);
  return data;
 }
