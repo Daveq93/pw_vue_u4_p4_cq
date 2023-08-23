@@ -65,6 +65,7 @@ export default {
       this.apellido = data.apellido;
       this.fechaNacimiento=data.fechaNacimiento;
       this.provincia=data.provincia;
+      console.log("imprimiendo desde el component: "+data);
     },
   },
   mounted(){

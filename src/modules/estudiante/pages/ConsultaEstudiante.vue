@@ -9,7 +9,7 @@ export default {
     DatosEstudiante,
   },
   mounted(){
-      const{ced}= this.$route.params;
+      //const{ced}= this.$route.params;
       console.log("Imprimiendo ced: "+ced);
   }
 };
