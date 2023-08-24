@@ -76,7 +76,11 @@ export default {
         provincia: this.provincia,
       };
 
-      await actualizarEstudianteFachada(data, this.id);
+       actualizarEstudianteFachada(data, this.id);
+if(Response==200){
+  alert(`Estudiante ${this.nombre} actulizado coorectamente`);
+}
+
     },
   },
 };

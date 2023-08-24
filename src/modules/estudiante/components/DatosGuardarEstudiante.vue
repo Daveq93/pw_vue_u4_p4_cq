@@ -40,7 +40,7 @@
       </tbody>
     </table>
 
-    <button @click="guardarEstudiante">Guardar</button>
+    <button type="button" class="btn btn-primary" @click="guardarEstudiante">Guardar</button>
   </div>
 </template>
 
@@ -68,11 +68,16 @@ export default {
 
        ingresarEstudianteFachada(data);
 
-      this.cedula="",
+
+       if (Response.status == 200) {
+        alert("Estudiante registrado correctamente");
+        this.cedula="",
       this.nombre="",
       this.apellido="",
       this.provincia=""
-
+      } else {
+        alert("No se pudo registrar el Estudiante");
+      }
     },
   },
 };
