@@ -3,44 +3,82 @@
     <table>
       <tbody>
         <tr>
-          <td><label for="cedula">Cedula:</label></td>
           <td>
-            <input
-              id="cedula"
+            <div class="form-floating mb-3">
+              <input
               v-model="cedula"
-              type="text"
-              placeholder="Ingrese cedula"
-            />
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese su cedula de identidad"
+              />
+              <label for="floatingInput">Cedula</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="nombre">Nombre:</label></td>
           <td>
-            <input id="nombre" v-model="nombre" type="text" />
+            <div class="form-floating mb-3">
+              <input
+              v-model="nombre"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese su nombre"
+              />
+              <label for="floatingInput">Nombre</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="apellido">Apellido:</label></td>
-          <td><input id="apellido" v-model="apellido" type="text" /></td>
+          <td>
+            <div class="form-floating mb-3">
+              <input
+              v-model="apellido"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese su apellido"
+              />
+              <label for="floatingInput">Apellido</label>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td><label for="fechaNacimiento">Fecha de Nacimiento:</label></td>
           <td>
-            <input
-              id="fechaNacimiento"
+            <div class="form-floating mb-3">
+              <input
               v-model="fechaNacimiento"
-              type="datetime-local"
-            />
+                type="datetime-local"
+                class="form-control"
+                id="floatingInput"
+              />
+              <label for="floatingInput">Fecha de nacimiento</label>
+            </div>
+
           </td>
         </tr>
         <tr>
-          <td><label for="provincia">Provincia:</label></td>
-          <td><input id="provincia" v-model="provincia" type="text" /></td>
+          
+          <td>
+            <div class="form-floating mb-3">
+              <input
+              v-model="provincia"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese provincia"
+              />
+              <label for="floatingInput">Provincia</label>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
 
-    <button type="button" class="btn btn-primary" @click="guardarEstudiante">Guardar</button>
+    <button type="button" class="btn btn-primary" @click="guardarEstudiante">
+      Guardar
+    </button>
   </div>
 </template>
 
@@ -57,7 +95,7 @@ export default {
     };
   },
   methods: {
-     guardarEstudiante() {
+    guardarEstudiante() {
       const data = {
         cedula: this.cedula,
         nombre: this.nombre,
@@ -66,15 +104,14 @@ export default {
         provincia: this.provincia,
       };
 
-       ingresarEstudianteFachada(data);
+      ingresarEstudianteFachada(data);
 
-
-       if (Response.status == 200) {
+      if (Response.status == 200) {
         alert("Estudiante registrado correctamente");
-        this.cedula="",
-      this.nombre="",
-      this.apellido="",
-      this.provincia=""
+        (this.cedula = ""),
+          (this.nombre = ""),
+          (this.apellido = ""),
+          (this.provincia = "");
       } else {
         alert("No se pudo registrar el Estudiante");
       }
@@ -92,8 +129,7 @@ export default {
   margin-top: 20px;
 }
 
-input{
+input {
   text-transform: capitalize;
 }
-
 </style>

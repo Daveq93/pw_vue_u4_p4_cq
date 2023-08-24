@@ -3,54 +3,93 @@
     <table>
       <tbody>
         <tr>
-          <td><label for="id">ID:</label></td>
           <td>
-            <input
-              id="id"
+            <div class="form-floating mb-3">
+              <input
               v-model="id"
-              type="number"
-              placeholder="Ingrese ID"
-            />
+                type="number"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese ID"
+              />
+              <label for="floatingInput">ID</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="cedula">Cedula:</label></td>
           <td>
-            <input
-              id="cedula"
+            <div class="form-floating mb-3">
+              <input
               v-model="cedula"
-              type="text"
-              placeholder="Ingrese cedula"
-            />
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese cedula de identidad"
+              />
+              <label for="floatingInput">Cedula</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="nombre">Nombre:</label></td>
+      
           <td>
-            <input id="nombre" v-model="nombre" type="text" />
+            <div class="form-floating mb-3">
+              <input
+              v-model="nombre"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese nombre"
+              />
+              <label for="floatingInput">Nombre</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="apellido">Apellido:</label></td>
-          <td><input id="apellido" v-model="apellido" type="text" /></td>
+
+          <td>
+            <div class="form-floating mb-3">
+              <input
+              v-model="apellido"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese apellido"
+              />
+              <label for="floatingInput">Apellido</label>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td><label for="fechaNacimiento">Fecha de Nacimiento:</label></td>
           <td>
-            <input
-              id="fechaNacimiento"
+            <div class="form-floating mb-3">
+              <input
               v-model="fechaNacimiento"
-              type="datetime-local"
-            />
+                type="datetime-local"
+                class="form-control"
+                id="floatingInput"
+              />
+              <label for="floatingInput">Fecha de nacimiento</label>
+            </div>
           </td>
         </tr>
         <tr>
-          <td><label for="provincia">Provincia:</label></td>
-          <td><input id="provincia" v-model="provincia" type="text" /></td>
+          <td>
+            <div class="form-floating mb-3">
+              <input
+              v-model="provincia"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Ingrese provincia"
+              />
+              <label for="floatingInput">Provincia</label>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
-    <button @click="actualizarEstudiante">Actualizar</button>
+    <button type="button" class="btn btn-primary" @click="actualizarEstudiante">Actualizar</button>
   </div>
 </template>
 
@@ -62,6 +101,7 @@ export default {
       cedula: null,
       nombre: null,
       apellido: null,
+      fechaNacimiento:null,
       provincia: null,
       id: null,
     };
@@ -86,4 +126,17 @@ if(Response==200){
 };
 </script>
 
-<style></style>
+<style>
+
+.containerDatosEstudiante {
+  display: flex;
+  justify-content: center;
+  display: grid;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input {
+  text-transform: capitalize;
+}
+</style>
